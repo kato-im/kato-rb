@@ -1,12 +1,14 @@
 # Kato
 
-TODO: Write a gem description
+Library that will allow you to post messages to [kato](https://kato.im) room.
+
+No API to read room history at the moment.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'kato'
+    gem 'kato-rb'
 
 And then execute:
 
@@ -14,11 +16,18 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install kato
+    $ gem install kato-rb
 
 ## Usage
 
-TODO: Write usage instructions here
+Go to your room integrations page, search for "HTTP POST" integration, make
+sure you have switched it **on**, use Room ID provided at that page instead of
+`room_id` in instructions below:
+
+    require 'kato'
+
+    room = Kato::Room.new("room_id")
+    room.post("Andrei", "Hello **world**", {:color => "green", :renderer => "markdown"})
 
 ## Contributing
 
